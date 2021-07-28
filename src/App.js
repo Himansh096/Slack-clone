@@ -10,9 +10,11 @@ import {
   Route
 } from "react-router-dom";
 import { Fragment } from 'react';
+import { useStateValue } from './StateProvider';
 
 function App() {
-  const [user, setUser] = useState(null)
+
+  const [{ user }, dispatch] = useStateValue()
   return (
     <div className="app">
       <Router>
@@ -33,5 +35,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
